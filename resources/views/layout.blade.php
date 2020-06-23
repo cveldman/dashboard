@@ -42,6 +42,15 @@
                 <span class="c-header-toggler-icon"></span>
             </button>
 
+            <ul class="c-header-nav ml-2">
+                <li class="c-header-nav-item">
+                    <a href="{{ route('admin.users.index') }}">Users</a>
+                </li>
+                <li class="c-header-nav-item">
+                    <a href="{{ route('admin.roles.index') }}">Roles</a>
+                </li>
+            </ul>
+
             <ul class="c-header-nav ml-auto mr-2">
                 <li class="c-header-nav-item dropdown">
                     <a class="c-header-nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
