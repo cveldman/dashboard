@@ -20,9 +20,8 @@
                 @else
                     @can('viewAny', $item->class)
                         <li class="c-sidebar-nav-item">
-                            <a class="c-sidebar-nav-link @if(Request::is([$item->route, 'admin/organisation/*'])) c-active @endif"
-                               href="{{ $item->route }}">
-                                <i class="c-sidebar-nav-icon {{ $item->icon }}"></i> {{ __($item->name) }}
+                            <a class="c-sidebar-nav-link @if(Request::is([$item->route, 'admin/organisation/*'])) c-active @endif" href="{{ $item->route }}">
+                                @if($item->icon) <i class="c-sidebar-nav-icon {{ $item->icon }}"></i> @endif {{ __($item->name) }}
                             </a>
                         </li>
                     @endcan
