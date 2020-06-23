@@ -42,13 +42,18 @@
                 <span class="c-header-toggler-icon"></span>
             </button>
 
-            <ul class="c-header-nav ml-2">
-                <li class="c-header-nav-item">
-                    <a href="{{ route('admin.users.index') }}">Users</a>
-                </li>
-                <li class="c-header-nav-item">
-                    <a href="{{ route('admin.roles.index') }}">Roles</a>
-                </li>
+            <ul class="c-header-nav">
+                @can('viewAny', config('admin.models.user'))
+                    <li class="c-header-nav-item px-3">
+                        <a class="c-header-nav-link" href="{{ route('admin.users.index') }}">Users</a>
+                    </li>
+                @endcan
+
+                @can('viewAny', config('admin.models.role'))
+                    <li class="c-header-nav-item px-3">
+                        <a class="c-header-nav-link" href="{{ route('admin.roles.index') }}">Roles</a>
+                    </li>
+                @endcan
             </ul>
 
             <ul class="c-header-nav ml-auto mr-2">
@@ -67,7 +72,6 @@
                     </div>
                 </li>
             </ul>
-
         </header>
         <div class="c-body">
             <main class="c-main">
