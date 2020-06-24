@@ -32,8 +32,7 @@
         "laravel": {
             "providers": [
                 "Veldman\\Dashboard\\Providers\\DashboardServiceProvider",
-                "Veldman\\Dashboard\\Providers\\AuthServiceProvider",
-                "Veldman\\Dashboard\\Providers\\AppServiceProvider"
+                "Veldman\\Dashboard\\Providers\\AuthServiceProvider"
             ]
         }
     }
