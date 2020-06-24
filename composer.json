@@ -7,9 +7,21 @@
             "email": "cveldman@hotmail.com"
         }
     ],
+    "repositories":[
+        {
+            "type": "vcs",
+            "url": "https://github.com/cveldman/laravel-search"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/cveldman/laravel-alert"
+        }
+    ],
     "minimum-stability": "dev",
     "require": {
-        "laravel/ui": "^2.0"
+        "laravel/ui": "^2.0",
+        "veldman/laravel-alert": "dev-master",
+        "veldman/laravel-search": "dev-master"
     },
     "autoload": {
         "psr-4": {
