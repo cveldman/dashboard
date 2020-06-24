@@ -29,5 +29,9 @@ class AppServiceProvider extends ServiceProvider
         RedirectResponse::macro('success', function ($message) {
             return $this->with('status', ['type' => 'success', 'message' => __($message)]);
         });
+
+        RedirectResponse::macro('info', function ($message) {
+            return $this->with('status', ['type' => 'info', 'message' => __($message)]);
+        });
     }
 }
