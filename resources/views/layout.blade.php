@@ -76,6 +76,13 @@
         <div class="c-body">
             <main class="c-main">
                 <div class="container-fluid">
+
+                    @if (session()->has('status'))
+                        <div class="alert alert-{{ session('status.type') }}" role="alert">
+                            {{ session('status.message') }}
+                        </div>
+                    @endif
+
                     @yield('content')
                 </div>
             </main>
