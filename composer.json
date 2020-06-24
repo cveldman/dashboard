@@ -20,8 +20,8 @@
     "minimum-stability": "dev",
     "require": {
         "laravel/ui": "^2.0",
-        "veldman/laravel-alert": "dev-master",
-        "veldman/laravel-search": "dev-master"
+        "veldman/laravel-search": "dev-master",
+        "veldman/laravel-alert": "dev-master"
     },
     "autoload": {
         "psr-4": {
