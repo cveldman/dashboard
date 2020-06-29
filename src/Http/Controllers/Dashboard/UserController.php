@@ -17,8 +17,6 @@ class UserController extends Controller
 
     public function index()
     {
-        $items = [];
-
         $items = User::paginate();
 
         return view('admin::users.index', compact('items'));
