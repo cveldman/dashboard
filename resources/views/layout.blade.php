@@ -83,7 +83,7 @@
                 </div>
             </main>
             <footer class="c-footer">
-                <div> © {{ date('Y') }} Appbakkers.</div>
+                <div> © {{ date('Y') }} {{ config('app.name') }}.</div>
             </footer>
         </div>
     </div>
