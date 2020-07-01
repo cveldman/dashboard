@@ -30,11 +30,11 @@
                     <td>{{ implode(' ', $item->roles->pluck('name')->all()) }}</td>
                     <td class="text-right">
                         @can('update', $item)
-                            <a href="{{ route('admin.users.edit', $item) }}">Update</a>
+                            <a href="{{ route('admin.users.edit', $item) }}">{{ __('Update') }}</a>
                         @endcan
 
                         @can('delete', $item)
-                            <a href="{{ route('admin.users.edit', $item) }}">Delete</a>
+                            <a href="{{ route('admin.users.edit', $item) }}">{{ __('Delete') }}</a>
                         @endcan
                     </td>
                 </tr>

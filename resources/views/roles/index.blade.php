@@ -26,11 +26,11 @@
                     </td>
                     <td class="text-right">
                         @can('update', $item)
-                            <a href="{{ route('admin.roles.edit', $item) }}">Update</a>
+                            <a href="{{ route('admin.roles.edit', $item) }}">{{ __('Update') }}</a>
                         @endcan
 
                         @can('delete', $item)
-                            <a href="{{ route('admin.roles.edit', $item) }}">Delete</a>
+                            <a href="{{ route('admin.roles.edit', $item) }}">{{ __('Delete') }}</a>
                         @endcan
                     </td>
                 </tr>
