@@ -6,10 +6,10 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Roles</th>
-            <th scope="col" class="text-right">Actions</th>
+            <th scope="col">{{ __('Name') }}</th>
+            <th scope="col">{{ __('Email') }}</th>
+            <th scope="col">{{ __('Roles') }}</th>
+            <th scope="col" class="text-right">{{ __('Actions') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -18,7 +18,13 @@
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
                     <td>
-                        <a href="{{ route('admin.users.show', $item) }}">{{ $item->name }}</a>
+                        @can('view', $item)
+                            <a href="{{ route('admin.users.show', $item) }}">
+                                {{ $item->name }}
+                            </a>
+                        @else
+                            {{ $item->name }}
+                        @endcan
                     </td>
                     <td>{{ $item->email }}</td>
                     <td>{{ implode(' ', $item->roles->pluck('name')->all()) }}</td>
@@ -35,7 +41,7 @@
             @endforeach
         @else
             <tr>
-                <td colspan="5" class="text-center">Geen items</td>
+                <td colspan="5" class="text-center">{{ __('No items') }}</td>
             </tr>
         @endif
         </tbody>
