@@ -17,7 +17,7 @@
 
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                               name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                               name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
 
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
 
                     <div class="col-md-6">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                               name="email" value="{{ old('email') }}" required autocomplete="email">
+                               name="email" value="{{ old('email') }}" autocomplete="email">
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@
 
                     <div class="col-md-6">
                         <input id="password" type="password"
-                               class="form-control @error('password') is-invalid @enderror" name="password" required
+                               class="form-control @error('password') is-invalid @enderror" name="password"
                                autocomplete="new-password">
 
                         @error('password')
@@ -64,7 +64,7 @@
 
                     <div class="col-md-6">
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
-                               required autocomplete="new-password">
+                               autocomplete="new-password">
                     </div>
                 </div>
 
@@ -83,6 +83,26 @@
                         </span>
                     @enderror
                 </div>
+
+                @isset($organisations)
+
+                    <div class="form-group row">
+                        <label for="organisation">{{ __('Organisation') }}</label>
+
+                        <select id="organisation" name="organisation_id" class="form-control @error('organisation_id') is-invalid @enderror">
+                            @foreach($organisations as $key => $value)
+                                <option value="{{ $key }}" @if(false) selected @endif>{{ $value }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('organisation_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                @endisset
 
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">
