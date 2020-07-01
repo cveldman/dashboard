@@ -2,6 +2,16 @@
 
 @section('content')
 
+    <h1 class="mb-4">{{ __('Users') }}</h1>
+
+    <div class="row mb-3">
+        <div class="col text-right">
+            @can('create', config('admin.models.user'))
+                <a href="{{ route('admin.users.create') }}" class="btn btn-primary">{{ __('Add') }}</a>
+            @endcan
+        </div>
+    </div>
+
     <table class="table">
         <thead>
         <tr>
