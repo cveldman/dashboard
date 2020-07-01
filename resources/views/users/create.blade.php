@@ -70,10 +70,9 @@
 
                 <div class="form-group">
                     <label for="roles">Roles</label>
-                    <select id="roles" name="roles[]" class="form-control @error('roles') is-invalid @enderror"
-                            multiple>
+                    <select id="roles" name="roles[]" class="form-control @error('roles') is-invalid @enderror" multiple>
                         @foreach($roles as $key => $value)
-                            <option value="{{ $key }}" @if(in_array($key, old('roles'))) @endif>{{ $value }}</option>
+                            <option value="{{ $key }}" @if(in_array($key, old('roles', []))) @endif>{{ $value }}</option>
                         @endforeach
                     </select>
 
