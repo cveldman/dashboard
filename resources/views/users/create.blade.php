@@ -73,7 +73,7 @@
                     <select id="roles" name="roles[]" class="form-control @error('roles') is-invalid @enderror"
                             multiple>
                         @foreach($roles as $key => $value)
-                            <option value="{{ $key }}">{{ $value }}</option>
+                            <option value="{{ $key }}" @if(in_array($key, old('roles'))) @endif>{{ $value }}</option>
                         @endforeach
                     </select>
 
