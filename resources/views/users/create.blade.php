@@ -35,6 +35,26 @@
                     @enderror
                 </div>
 
+                @isset($organisations)
+
+                    <div class="form-group row">
+                        <label for="organisation">{{ __('Organisation') }}</label>
+
+                        <select id="organisation" name="organisation_id" class="form-control @error('organisation_id') is-invalid @enderror">
+                            @foreach($organisations as $key => $value)
+                                <option value="{{ $key }}" @if(old('organisation_id')) selected @endif>{{ $value }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('organisation_id')
+                        <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                @endisset
+
                 <div class="form-group">
                     <label for="password">{{ __('Password') }}</label>
 
@@ -75,26 +95,6 @@
                         </span>
                     @enderror
                 </div>
-
-                @isset($organisations)
-
-                    <div class="form-group row">
-                        <label for="organisation">{{ __('Organisation') }}</label>
-
-                        <select id="organisation" name="organisation_id" class="form-control @error('organisation_id') is-invalid @enderror">
-                            @foreach($organisations as $key => $value)
-                                <option value="{{ $key }}" @if(old('organisation_id')) selected @endif>{{ $value }}</option>
-                            @endforeach
-                        </select>
-
-                        @error('organisation_id')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
-                @endisset
 
                 <div class="form-group row">
                     <div class="col-md-6 offset-md-4">
