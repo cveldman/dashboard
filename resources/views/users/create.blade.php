@@ -37,7 +37,7 @@
 
                 @isset($organisations)
 
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label for="organisation">{{ __('Organisation') }}</label>
 
                         <select id="organisation" name="organisation_id" class="form-control @error('organisation_id') is-invalid @enderror">
