@@ -6,13 +6,11 @@ use Veldman\Dashboard\Http\Controllers\Controller;
 
 class ChangeProfileController extends Controller
 {
-    public function __construct()
+    public function edit()
     {
-
     }
 
-    public function index()
+    public function update()
     {
-
     }
 }

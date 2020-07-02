@@ -4,15 +4,13 @@ namespace Veldman\Dashboard\Http\Controllers\Dashboard;
 
 use Veldman\Dashboard\Http\Controllers\Controller;
 
-class ChangePassportController extends Controller
+class ChangePasswordController extends Controller
 {
-    public function __construct()
+    public function edit()
     {
-
     }
 
-    public function index()
+    public function update()
     {
-
     }
 }
