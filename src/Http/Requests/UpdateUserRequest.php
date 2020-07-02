@@ -8,4 +8,14 @@ class UpdateUserRequest extends StoreUserRequest
     {
         return true;
     }
+
+    public function rules()
+    {
+        return [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'roles' => ['required', 'array'],
+            'organisation_id' => ['sometimes', 'nullable']
+        ];
+    }
 }

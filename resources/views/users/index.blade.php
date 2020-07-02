@@ -41,11 +41,12 @@
                         <td>{{ implode(' ', $item->roles->pluck('name')->all()) }}</td>
                         <td class="text-right">
                             @can('update', $item)
-                                <a href="{{ route('admin.users.edit', $item) }}">{{ __('Update') }}</a>
+                                <a href="{{ route('admin.users.edit', $item) }}">{{ __('Edit') }}</a>
                             @endcan
 
                             @can('delete', $item)
-                                <a href="{{ route('admin.users.edit', $item) }}">{{ __('Delete') }}</a>
+                                    <a href="{{ route('admin.users.destroy', $item) }}" data-toggle="modal" data-target="#delete-modal"
+                                       onclick="document.getElementById('delete-form').setAttribute('action', this.getAttribute('href'));">{{ __('Delete') }}</a>
                             @endcan
                         </td>
                     </tr>
@@ -57,6 +58,33 @@
             @endif
             </tbody>
         </table>
+    </div>
+
+    <div id="delete-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ __('Delete') }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ __('Are you sure you want to delete this entry?') }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close') }}</button>
+
+                    <form id="delete-form" method="post">
+                        @csrf
+
+                        <input type="hidden" name="_method" value="delete" />
+
+                        <button type="submit" class="btn btn-danger">{{ __('Delete') }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 @endsection

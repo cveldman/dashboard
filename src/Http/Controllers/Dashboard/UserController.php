@@ -61,8 +61,14 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
-        $user->delete();
+        try {
+            $user->roles()->sync([]);
 
-        return redirect()->route('admin.users.index');
+            $user->delete();
+
+            return redirect()->route('admin.users.index');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.users.index');
+        }
     }
 }

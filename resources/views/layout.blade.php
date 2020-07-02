@@ -9,28 +9,11 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @if (file_exists(public_path('css/admin.css')))
-        <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-    @elseif(file_exists(public_path('veldman/dashboard/admin.css')))
-        <link rel="stylesheet" href="{{ asset('veldman/dashboard/admin.css') }}">
-    @else
-        <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css" crossorigin="anonymous">
-    @endif
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 
-    @stack('styles')
-
-    @if (file_exists(public_path('js/admin.js')))
-        <script src="{{ asset('js/admin.js') }}" defer></script>
-    @elseif(file_exists(public_path('veldman/dashboard/admin.js')))
-        <script src="{{ asset('veldman/dashboard/admin.js') }}" defer></script>
-    @else
-        <script src="https://unpkg.com/@popperjs/core@2" defer></script>
-        <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js" defer></script>
-    @endif
+    <script src="{{ asset('js/admin.js') }}" defer></script>
 
     @stack('scripts')
-
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/free.min.css">
 
 </head>
 <body>

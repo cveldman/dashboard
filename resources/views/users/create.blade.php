@@ -11,61 +11,54 @@
             </div>
             <div class="card-body">
 
+                <div class="form-group">
+                    <label for="name">{{ __('Name') }}</label>
 
-                <div class="form-group row">
-                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                    <input type="text" name="name" value="{{ old('name') }}" id="name" class="form-control @error('name') is-invalid @enderror" autocomplete="name" autofocus>
 
-                    <div class="col-md-6">
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                               name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
-
-                        @error('name')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                    <div class="col-md-6">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                               name="email" value="{{ old('email') }}" autocomplete="email">
-
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                    <div class="col-md-6">
-                        <input id="password" type="password"
-                               class="form-control @error('password') is-invalid @enderror" name="password"
-                               autocomplete="new-password">
-
-                        @error('password')
+                    @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror
-                    </div>
+                    @enderror
                 </div>
 
-                <div class="form-group row">
-                    <label for="password-confirm"
-                           class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                <div class="form-group">
+                    <label for="email">{{ __('Email') }}</label>
 
-                    <div class="col-md-6">
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
-                               autocomplete="new-password">
-                    </div>
+                    <input type="text" name="email" value="{{ old('email') }}" id="email" class="form-control @error('email') is-invalid @enderror" autocomplete="email">
+
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="password">{{ __('Password') }}</label>
+
+                    <input type="password" name="password" value="{{ old('password') }}"
+                           id="password" class="form-control @error('password') is-invalid @enderror" autocomplete="new-password">
+
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="password_confirmation">{{ __('Confirm Password') }}</label>
+
+                    <input type="password" name="password_confirmation"
+                            id="password" class="form-control @error('password_confirmation') is-invalid @enderror" autocomplete="new-password">
+
+                    @error('password_confirmation')
+                    <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="form-group">
@@ -77,7 +70,7 @@
                     </select>
 
                     @error('roles')
-                    <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -90,7 +83,7 @@
 
                         <select id="organisation" name="organisation_id" class="form-control @error('organisation_id') is-invalid @enderror">
                             @foreach($organisations as $key => $value)
-                                <option value="{{ $key }}" @if(false) selected @endif>{{ $value }}</option>
+                                <option value="{{ $key }}" @if(old('organisation_id')) selected @endif>{{ $value }}</option>
                             @endforeach
                         </select>
 
