@@ -10,7 +10,7 @@ class RolePolicy
 
     public function before($user, $ability)
     {
-        return false;
+        //
     }
 
     public function viewAny($role)

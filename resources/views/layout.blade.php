@@ -15,6 +15,8 @@
 
     @stack('scripts')
 
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/free.min.css">
+
 </head>
 <body>
 <div id="app" class="c-app">
@@ -59,9 +61,6 @@
         <div class="c-body">
             <main class="c-main">
                 <div class="container-fluid">
-
-                    @alerts
-
                     @yield('content')
                 </div>
             </main>

@@ -2,7 +2,10 @@
 
 @section('content')
 
-    <form method="PUT" action="{{ route('admin.users.update', $user) }}">
+    <form method="POST" action="{{ route('admin.users.update', $user) }}">
+
+        <input name="_method" type="hidden" value="PUT">
+
         @csrf
 
         <div class="card">

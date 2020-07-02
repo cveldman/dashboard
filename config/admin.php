@@ -4,7 +4,7 @@ return [
 
     'models' => [
         'user' => 'App\User',
-        'role' => 'App\User'
+        'role' => 'Veldman\Dashboard\Models\Role'
     ],
 
     'prefix' => env('DASHBOARD_PREFIX', 'admin'),
