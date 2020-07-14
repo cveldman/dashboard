@@ -12,10 +12,6 @@ trait HasRoles
     }
 
     public function hasRole($roles) {
-        return $this->roles->contains(function ($value, $key) use ($roles) {
-            return $value == $roles || $key == $roles;
-        });
-
-        return false;
+        return $this->roles()->where('name', $roles)->exists();
     }
 }
