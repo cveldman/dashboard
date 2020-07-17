@@ -45,7 +45,7 @@
 
                         <select id="organisation" name="organisation_id" class="form-control @error('organisation_id') is-invalid @enderror">
                             @foreach($organisations as $key => $value)
-                                <option value="{{ $key }}" @if(old('organisation_id', $user->organisation_id)) selected @endif>{{ $value }}</option>
+                                <option value="{{ $key }}" @if(old('organisation_id', $user->organisation_id) == $key) selected @endif>{{ $value }}</option>
                             @endforeach
                         </select>
 
