@@ -61,6 +61,8 @@
         <div class="c-body">
             <main class="c-main">
                 <div class="container-fluid">
+                    @errors
+
                     @yield('content')
                 </div>
             </main>
