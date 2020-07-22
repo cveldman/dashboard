@@ -10,7 +10,7 @@ class UserPolicy
 
     public function before($user, $ability)
     {
-        if(in_array($user->id, [1,2]))
+        if($user->hasRole('Administrator') || $user->hasRole('Eigenaar'))
             return true;
     }
 

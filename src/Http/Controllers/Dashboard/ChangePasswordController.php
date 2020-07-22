@@ -12,5 +12,6 @@ class ChangePasswordController extends Controller
 
     public function update()
     {
+
     }
 }
