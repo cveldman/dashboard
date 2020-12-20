@@ -2,7 +2,7 @@
 
 namespace Veldman\Dashboard\Http\Controllers\Dashboard;
 
-use App\User;
+use App\Models\User;
 use Veldman\Dashboard\Http\Controllers\Controller;
 use Veldman\Dashboard\Http\Requests\StoreUserRequest;
 use Veldman\Dashboard\Http\Requests\UpdateUserRequest;
