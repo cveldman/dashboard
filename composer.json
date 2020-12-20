@@ -19,7 +19,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "laravel/ui": "^2.0"
+        "laravel/ui": "^3.0"
     },
     "autoload": {
         "psr-4": {
