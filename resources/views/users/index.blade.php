@@ -19,6 +19,7 @@
                 <th scope="col">#</th>
                 <th scope="col">{{ __('Name') }}</th>
                 <th scope="col">{{ __('Email') }}</th>
+                <th scope="col">{{ __('Organization') }}</th>
                 <th scope="col">{{ __('Roles') }}</th>
                 <th scope="col" class="text-right">{{ __('Actions') }}</th>
             </tr>
@@ -38,6 +39,7 @@
                             @endcan
                         </td>
                         <td>{{ $item->email }}</td>
+                        <td>{{ $item->organization != null ? $item->organization->name : '-' }}</td>
                         <td>{{ implode(' ', $item->roles->pluck('name')->all()) }}</td>
                         <td class="text-right">
                             @can('update', $item)
